@@ -6,28 +6,27 @@ on:
   workflow_dispatch: # 手動実行も可能
 
 jobs:
-  scrape:
+  build:
     runs-on: ubuntu-latest
 
+    env:
+      TZ: Asia/Shanghai
+
     steps:
-      - name: Checkout repository
+      - name: Clone repository
         uses: actions/checkout@v3
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
+      - name: Install deno
+        uses: denoland/setup-deno@v1
 
-      - name: Install dependencies
+      - name: Run deno
         run: |
-          npm install
-
-      - name: Run scraper
-        run: |
-          npx ts-node src/scraper.ts 
-
-      - name: Upload output
-        uses: actions/upload-artifact@v3
-        with:
-          name: mansion-data
-          path: output/mansion_data.json
+          git config --local user.email "bot@github.com"
+          git config --local user.name "bot"
+          git remote set-url origin https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+          git pull --rebase
+          deno task start
+          deno fmt
+          git add .
+          git commit -m "update by github action"
+          git push
