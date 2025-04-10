@@ -1,0 +1,33 @@
+name: Scrape Mansion Data
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # 毎日午前0時に実行
+  workflow_dispatch: # 手動実行も可能
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: |
+          npm install
+
+      - name: Run scraper
+        run: |
+          npx ts-node src/scraper.ts
+
+      - name: Upload output
+        uses: actions/upload-artifact@v3
+        with:
+          name: mansion-data
+          path: output/mansion_data.json
