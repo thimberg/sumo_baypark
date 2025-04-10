@@ -24,9 +24,9 @@ const words: Word[] = Array.from(matches).map((x) => ({
   title: x[2],
 }));
 
-const yyyyMMdd = format(new Date(), "yyyy-MM-dd");
-const yyyy = format(new Date(), "yyyy");
-const fullPath = join("raw", `${yyyyMMdd}.json`);
+// const yyyyMMdd = format(new Date(), "yyyy-MM-dd");
+// const yyyy = format(new Date(), "yyyy");
+// const fullPath = join("raw", `${yyyyMMdd}.json`);
 
 // let wordsAlreadyDownload: Word[] = [];
 // if (await exists(fullPath)) {
