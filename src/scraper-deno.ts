@@ -17,16 +17,20 @@ async function scrapeMansionData() {
       throw new Error("Failed to parse HTML");
     }
 
-    // Helper function to find the value for a specific label
-    function getValueByLabel(label: string): string {
-      const thElements = doc.querySelectorAll("th");
-      for (const th of thElements) {
-        if (th.textContent.trim() === label) {
-          const td = th.nextElementSibling;
-          return td?.textContent.trim() || "N/A";
-        }
+    // Extract all rows from the table
+    const rows = doc.querySelectorAll("#cassettearea > div.caseBukken.cFix > table > tbody > tr");
+    const data: Record<string, string>[] = [];
+
+    for (const row of rows) {
+      const th = row.querySelector("th");
+      const td = row.querySelector("td");
+
+      if (th && td) {
+        data.push({
+          label: th.textContent.trim(),
+          value: td.textContent.trim(),
+        });
       }
-      return "N/A";
     }
 
     // Extract data
