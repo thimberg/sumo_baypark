@@ -30,7 +30,7 @@ async function scrapeMansionData() {
       const cells = row.querySelectorAll("td");
 
       // デバッグ: 各行のセル数を確認
-      console.log(`Row ${i} has ${cells.length} cells`);
+      //console.log(`Row ${i} has ${cells.length} cells`);
       if (cells.length > 0) {
         // Extract data from each cell (adjust indices as needed)
         const layout = cells[1]?.textContent.trim() || "N/A"; // 間取り
