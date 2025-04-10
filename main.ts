@@ -1,10 +1,10 @@
 #!/usr/bin/env -S deno run --unstable --allow-net --allow-read --allow-write --import-map=import_map.json
-import { format } from "std/datetime/mod.ts";
-import { join } from "std/path/mod.ts";
-import { exists } from "std/fs/mod.ts";
+// import { format } from "std/datetime/mod.ts";
+// import { join } from "std/path/mod.ts";
+// import { exists } from "std/fs/mod.ts";
 
-import type { Word } from "./types.ts";
-import { createArchive, createReadme, mergeWords } from "./utils.ts";
+// import type { Word } from "./types.ts";
+// import { createArchive, createReadme, mergeWords } from "./utils.ts";
 
 const url = "https://suumo.jp/library/tf_12/sc_12106/to_1000243956/";
 
