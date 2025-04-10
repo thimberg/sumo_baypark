@@ -1,4 +1,4 @@
-name: Scrape Mansion Data
+name: Scrape Mansion Data axios
 
 on:
   schedule:
