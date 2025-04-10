@@ -56,8 +56,8 @@ async function scrapeMansionData() {
         //console.log(`Row ${i} has ${cells.length} cells`);
         if (cells.length > 0) {
           // Extract data from each cell (adjust indices as needed)
-          const layout = cells[0]?.textContent.trim() || "N/A"; // 間取り
-          const area = cells[1]?.textContent.trim() || "N/A"; // 専有面積
+          const layout = cells[1]?.textContent.trim() || "N/A"; // 間取り
+          const price = cells[2]?.textContent.trim() || "N/A"; // 価格
           const area = cells[3]?.textContent.trim() || "N/A"; // 専有面積
           const orientation = cells[4]?.textContent.trim() || "N/A"; // 方位
 
