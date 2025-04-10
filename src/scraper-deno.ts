@@ -54,7 +54,7 @@ async function scrapeMansionData() {
     const mansionData = {
       url: URL,
       details: data,
-      取得済みデータと同じ内容,
+      fetchedAt: new Date().toISOString(),
     };
 
     // Check if the output file exists
