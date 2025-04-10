@@ -60,7 +60,7 @@ async function scrapeMansionData() {
 
     // Ensure output directory exists
     await ensureDir("output");
-    
+
     // Compare each new entry with existing data
     const updatedData = [...existingData.details];
     for (const newEntry of newData) {
