@@ -24,7 +24,7 @@ async function scrapeMansionData() {
     const data: Record<string, string>[] = [];
 
     console.log("Found rows:", rows.length);
-    
+
     for (const row of rows) {
       const th = row.querySelector("th");
       const td = row.querySelector("td");
