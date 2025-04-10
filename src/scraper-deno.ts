@@ -10,7 +10,8 @@ const OUTPUT_FILE = `${Deno.cwd()}/output/mansion_data.json`;
 async function scrapeMansionData() {
   try {
     // Load existing data if available
-    let existingData: { [url: string]: { details: Record<string, string>[] } } = {};
+    let existingData: { [url: string]: { details: Record<string, string>[] } } =
+      {};
     try {
       existingData = JSON.parse(await Deno.readTextFile(OUTPUT_FILE));
     } catch {
@@ -21,7 +22,9 @@ async function scrapeMansionData() {
     await ensureDir("output");
 
     // Initialize updated data
-    const updatedData: { [url: string]: { details: Record<string, string>[] } } = { ...existingData };
+    const updatedData: {
+      [url: string]: { details: Record<string, string>[] };
+    } = { ...existingData };
 
     // Process each URL
     for (const URL of URLS) {
@@ -72,11 +75,11 @@ async function scrapeMansionData() {
 
       // デバッグ: 各行のデータを出力
       //console.log(`Row ${i} data:`, { layout, area, price, orientation });
-      
+
       // Compare each new entry with existing data for the current URL
       const existingEntries = existingData[URL]?.details || [];
       const updatedEntries = [...existingEntries];
-        
+
       for (const newEntry of newData) {
         const isDuplicate = existingEntries.some(
           (existingEntry) =>
