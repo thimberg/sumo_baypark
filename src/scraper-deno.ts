@@ -21,7 +21,7 @@ async function scrapeMansionData() {
     const rows = doc.querySelectorAll(
       "#cassettearea > div.caseBukken.cFix > table > tbody > tr",
     );
-    const data: Record<string, string>[] = [];
+    const newData: Record<string, string>[] = [];
 
     console.log("Found rows:", rows.length);
 
@@ -38,7 +38,7 @@ async function scrapeMansionData() {
         const area = cells[3]?.textContent.trim() || "N/A"; // 専有面積
         const orientation = cells[4]?.textContent.trim() || "N/A"; // 方位
 
-        data.push({
+        newData.push({
           layout,
           area,
           price,
@@ -46,38 +46,49 @@ async function scrapeMansionData() {
         });
 
         // デバッグ: 各行のデータを出力
-        console.log(`Row ${i} data:`, { layout, area, price, orientation });
+        //console.log(`Row ${i} data:`, { layout, area, price, orientation });
       }
     }
 
-    // Create a data object
-    const mansionData = {
-      url: URL,
-      details: data,
-      fetchedAt: new Date().toISOString(),
-    };
-
-    // Check if the output file exists
+    // Load existing data if available
+    let existingData: { details: Record<string, string>[] } = { details: [] };
     try {
-      const existingData = JSON.parse(await Deno.readTextFile(OUTPUT_FILE));
-
-      // Compare the new data with the existing data (excluding fetchedAt)
-      const { fetchedAt: _, ...existingDataWithoutDate } = existingData;
-      const { fetchedAt: __, ...newDataWithoutDate } = mansionData;
-
-      if (
-        JSON.stringify(existingDataWithoutDate) ===
-          JSON.stringify(newDataWithoutDate)
-      ) {
-        console.log("No changes detected. Skipping update.");
-        return;
-      }
+      existingData = JSON.parse(await Deno.readTextFile(OUTPUT_FILE));
     } catch {
-      // File does not exist or is invalid, proceed with saving new data
+      console.log("No existing data found. Starting fresh.");
     }
 
     // Ensure output directory exists
     await ensureDir("output");
+    
+    // Compare each new entry with existing data
+    const updatedData = [...existingData.details];
+    for (const newEntry of newData) {
+      const isDuplicate = existingData.details.some(
+        (existingEntry) =>
+          existingEntry.layout === newEntry.layout &&
+          existingEntry.area === newEntry.area &&
+          existingEntry.price === newEntry.price &&
+          existingEntry.floor === newEntry.floor,
+      );
+
+      if (!isDuplicate) {
+        // Add fetchedAt to new entries
+        updatedData.push({
+          ...newEntry,
+          fetchedAt: new Date().toISOString(),
+        });
+        console.log("New entry added:", newEntry);
+      } else {
+        console.log("Duplicate entry skipped:", newEntry);
+      }
+    }
+
+    // Save updated data
+    const mansionData = {
+      url: URL,
+      details: updatedData,
+    };
 
     // Write data to a JSON file
     await Deno.writeTextFile(
