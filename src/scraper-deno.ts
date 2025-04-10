@@ -16,21 +16,25 @@ async function scrapeMansionData() {
       throw new Error("Failed to parse HTML");
     }
 
-    // Extract data (modify selectors as needed)
-    const title = doc.querySelector("h1")?.textContent.trim() || "N/A";
-    const layout =
-      doc.querySelector("th:contains('間取り') + td")?.textContent.trim() ||
-      "N/A";
-    const price =
-      doc.querySelector("th:contains('価格') + td")?.textContent.trim() ||
-      "N/A";
-    const area =
-      doc.querySelector("th:contains('専有面積') + td")?.textContent.trim() ||
-      "N/A";
-    const orientation =
-      doc.querySelector("th:contains('方位') + td")?.textContent.trim() ||
-      "N/A";
+    // Helper function to find the value for a specific label
+    function getValueByLabel(label: string): string {
+      const thElements = doc.querySelectorAll("th");
+      for (const th of thElements) {
+        if (th.textContent.trim() === label) {
+          const td = th.nextElementSibling;
+          return td?.textContent.trim() || "N/A";
+        }
+      }
+      return "N/A";
+    }
 
+    // Extract data
+    const title = doc.querySelector("h1")?.textContent.trim() || "N/A";
+    const price = getValueByLabel("価格");
+    const layout = getValueByLabel("間取り");
+    const area = getValueByLabel("専有面積");
+    const orientation = getValueByLabel("方位");
+    
     // Create a data object
     const mansionData = {
       title,
