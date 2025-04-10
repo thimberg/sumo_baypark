@@ -28,12 +28,23 @@ async function scrapeMansionData() {
             url: URL,
         };
 
+        // Check if the output file exists
+        if (fs.existsSync(OUTPUT_FILE)) {
+            const existingData = JSON.parse(fs.readFileSync(OUTPUT_FILE, 'utf-8'));
+
+            // Compare the new data with the existing data
+            if (JSON.stringify(existingData) === JSON.stringify(mansionData)) {
+                console.log('No changes detected. Skipping update.');
+                return;
+            }
+        }
+
         // Ensure output directory exists
         fs.mkdirSync('output', { recursive: true });
 
         // Write data to a JSON file
         fs.writeFileSync(OUTPUT_FILE, JSON.stringify(mansionData, null, 2), 'utf-8');
-        console.log('Data saved to', OUTPUT_FILE);
+        console.log('Data updated and saved to', OUTPUT_FILE);
     } catch (error) {
         console.error('Error scraping mansion data:', error);
     }
