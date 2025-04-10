@@ -66,6 +66,5 @@ Deno.test("createReadme", async function (): Promise<void> {
     { query: "hello", display_query: "world" },
   ];
 
-  assertStringIncludes(await createReadme(words), "知乎");
-  assertStringIncludes(await createReadme(words), "zhihu-top-search");
+  assertStringIncludes(await createReadme(words), "suumo");
 });
