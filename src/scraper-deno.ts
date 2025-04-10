@@ -3,7 +3,7 @@ import { DOMParser } from "https://deno.land/x/deno_dom/deno-dom-wasm.ts";
 
 //const URL = "https://suumo.jp/library/tf_12/sc_12106/to_1000243956/";
 const URL = "https://suumo.jp/library/tf_12/sc_12106/to_1000243957/";
-const OUTPUT_FILE = "output/mansion_data.json";
+const OUTPUT_FILE = `${Deno.cwd()}/output/mansion_data.json`;
 
 async function scrapeMansionData() {
   try {
