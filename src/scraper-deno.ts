@@ -54,7 +54,7 @@ async function scrapeMansionData() {
     const mansionData = {
       url: URL,
       details: data,
-      取得済みデータと同じ内容
+      取得済みデータと同じ内容,
     };
 
     // Check if the output file exists
@@ -65,7 +65,10 @@ async function scrapeMansionData() {
       const { fetchedAt: _, ...existingDataWithoutDate } = existingData;
       const { fetchedAt: __, ...newDataWithoutDate } = mansionData;
 
-      if (JSON.stringify(existingDataWithoutDate) === JSON.stringify(newDataWithoutDate)) {
+      if (
+        JSON.stringify(existingDataWithoutDate) ===
+          JSON.stringify(newDataWithoutDate)
+      ) {
         console.log("No changes detected. Skipping update.");
         return;
       }
