@@ -18,7 +18,9 @@ async function scrapeMansionData() {
     }
 
     // Extract all rows from the table
-    const rows = doc.querySelectorAll("#cassettearea > div.caseBukken.cFix > table > tbody > tr");
+    const rows = doc.querySelectorAll(
+      "#cassettearea > div.caseBukken.cFix > table > tbody > tr",
+    );
     const data: Record<string, string>[] = [];
 
     for (const row of rows) {
