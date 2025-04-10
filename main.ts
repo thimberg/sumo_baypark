@@ -6,14 +6,21 @@ import { exists } from "std/fs/mod.ts";
 import type { Word } from "./types.ts";
 import { createArchive, createReadme, mergeWords } from "./utils.ts";
 
-const regexp = #cassettearea > div:nth-child(3) > table > tr;
+const url = "https://suumo.jp/library/tf_12/sc_12106/to_1000243956/";
 
-const response = await fetch("https://suumo.jp/library/tf_12/sc_12106/to_1000243956/");
+// ヘッダー設定
+const headers = {
+  "User-Agent": "Mozilla/5.0",
+};
+
+const response = await fetch(url, { headers });
 
 if (!response.ok) {
+  console.error("suumo.jp Access Error!");
   console.error(response.statusText);
   Deno.exit(-1);
 }
+
 
 const result: string = await response.text();
 
