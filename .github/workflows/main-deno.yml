@@ -1,0 +1,34 @@
+name: Scrape Mansion Data Deno
+
+on:
+  schedule:
+    - cron: "0 * * * *" # 毎時0分に実行
+  workflow_dispatch: # 手動実行も可能
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    env:
+      TZ: Asia/Shanghai
+
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v3
+
+      - name: Install deno
+        uses: denoland/setup-deno@v1
+        with:
+          deno-version: v1.x # 最新のDenoバージョンを使用
+
+      - name: Run deno
+        run: |
+          git config --local user.email "bot@github.com"
+          git config --local user.name "bot"
+          git remote set-url origin https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+          git pull --rebase
+          deno task start
+          deno fmt
+          git add .
+          git commit -m "update by github action" || echo "No changes to commit"
+          git push || echo "No changes to push"
