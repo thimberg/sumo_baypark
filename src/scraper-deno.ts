@@ -35,22 +35,28 @@ async function scrapeMansionData() {
       }
     }
 
-    // Extract data
-    const title = doc.querySelector("h1")?.textContent.trim() || "N/A";
-    const price = getValueByLabel("価格");
-    const layout = getValueByLabel("間取り");
-    const area = getValueByLabel("専有面積");
-    const orientation = getValueByLabel("方位");
-
     // Create a data object
     const mansionData = {
-      title,
-      orientation,
-      price,
-      layout,
-      area,
       url: URL,
+      details: data,
     };
+    
+    // // Extract data
+    // const title = doc.querySelector("h1")?.textContent.trim() || "N/A";
+    // const price = getValueByLabel("価格");
+    // const layout = getValueByLabel("間取り");
+    // const area = getValueByLabel("専有面積");
+    // const orientation = getValueByLabel("方位");
+
+    // // Create a data object
+    // const mansionData = {
+    //   title,
+    //   orientation,
+    //   price,
+    //   layout,
+    //   area,
+    //   url: URL,
+    // };
 
     // Check if the output file exists
     try {
