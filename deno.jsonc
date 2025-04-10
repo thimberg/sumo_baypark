@@ -1,6 +1,6 @@
 {
   "tasks": {
-    "start": "deno run --allow-net --allow-write src/scraper.ts",
+    "start": "deno run --allow-net --allow-write src/scraper-deno.ts",
     "fmt": "deno fmt"
   }
 }
