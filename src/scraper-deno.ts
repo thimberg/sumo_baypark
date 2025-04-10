@@ -18,23 +18,23 @@ async function scrapeMansionData() {
 
     // Extract data (modify selectors as needed)
     const title = doc.querySelector("h1")?.textContent.trim() || "N/A";
-    const address =
-      doc.querySelector("th:contains('所在地') + td")?.textContent.trim() ||
+    const layout =
+      doc.querySelector("th:contains('間取り') + td")?.textContent.trim() ||
       "N/A";
     const price =
       doc.querySelector("th:contains('価格') + td")?.textContent.trim() ||
       "N/A";
-    const layout =
-      doc.querySelector("th:contains('間取り') + td")?.textContent.trim() ||
-      "N/A";
     const area =
       doc.querySelector("th:contains('専有面積') + td")?.textContent.trim() ||
+      "N/A";
+    const orientation =
+      doc.querySelector("th:contains('方位') + td")?.textContent.trim() ||
       "N/A";
 
     // Create a data object
     const mansionData = {
       title,
-      address,
+      orientation,
       price,
       layout,
       area,
