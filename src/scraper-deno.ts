@@ -54,31 +54,18 @@ async function scrapeMansionData() {
     const mansionData = {
       url: URL,
       details: data,
+      取得済みデータと同じ内容
     };
-
-    // // Extract data
-    // const title = doc.querySelector("h1")?.textContent.trim() || "N/A";
-    // const price = getValueByLabel("価格");
-    // const layout = getValueByLabel("間取り");
-    // const area = getValueByLabel("専有面積");
-    // const orientation = getValueByLabel("方位");
-
-    // // Create a data object
-    // const mansionData = {
-    //   title,
-    //   orientation,
-    //   price,
-    //   layout,
-    //   area,
-    //   url: URL,
-    // };
 
     // Check if the output file exists
     try {
       const existingData = JSON.parse(await Deno.readTextFile(OUTPUT_FILE));
 
-      // Compare the new data with the existing data
-      if (JSON.stringify(existingData) === JSON.stringify(mansionData)) {
+      // Compare the new data with the existing data (excluding fetchedAt)
+      const { fetchedAt: _, ...existingDataWithoutDate } = existingData;
+      const { fetchedAt: __, ...newDataWithoutDate } = mansionData;
+
+      if (JSON.stringify(existingDataWithoutDate) === JSON.stringify(newDataWithoutDate)) {
         console.log("No changes detected. Skipping update.");
         return;
       }
