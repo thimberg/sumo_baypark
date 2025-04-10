@@ -34,7 +34,7 @@ async function scrapeMansionData() {
     const layout = getValueByLabel("間取り");
     const area = getValueByLabel("専有面積");
     const orientation = getValueByLabel("方位");
-    
+
     // Create a data object
     const mansionData = {
       title,
