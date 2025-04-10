@@ -25,18 +25,31 @@ async function scrapeMansionData() {
 
     console.log("Found rows:", rows.length);
 
-    for (const row of rows) {
-      const th = row.querySelector("th");
-      const td = row.querySelector("td");
+    for (let i = 1; i < rows.length; i++) {
+      const row = rows[i];
+      const cells = row.querySelectorAll("td");
 
-      if (th && td) {
+      // デバッグ: 各行のセル数を確認
+      console.log(`Row ${i} has ${cells.length} cells`);
+      if (cells.length > 0) {
+        // Extract data from each cell (adjust indices as needed)
+        const layout = cells[1]?.textContent.trim() || "N/A"; // 間取り
+        const price = cells[2]?.textContent.trim() || "N/A"; // 価格
+        const area = cells[3]?.textContent.trim() || "N/A"; // 専有面積
+        const orientation = cells[4]?.textContent.trim() || "N/A"; // 方位
+
         data.push({
-          label: th.textContent.trim(),
-          value: td.textContent.trim(),
+          layout,
+          area,
+          price,
+          orientation,
         });
+
+        // デバッグ: 各行のデータを出力
+        console.log(`Row ${i} data:`, { layout, area, price, orientation });
       }
     }
-
+    
     // Create a data object
     const mansionData = {
       url: URL,
