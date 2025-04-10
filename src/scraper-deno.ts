@@ -49,7 +49,7 @@ async function scrapeMansionData() {
         console.log(`Row ${i} data:`, { layout, area, price, orientation });
       }
     }
-    
+
     // Create a data object
     const mansionData = {
       url: URL,
