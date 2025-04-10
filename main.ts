@@ -22,14 +22,14 @@ if (!response.ok) {
 }
 
 
-const result: string = await response.text();
+// const result: string = await response.text();
 
-const matches = result.matchAll(regexp);
+// const matches = result.matchAll(regexp);
 
-const words: Word[] = Array.from(matches).map((x) => ({
-  url: x[1],
-  title: x[2],
-}));
+// const words: Word[] = Array.from(matches).map((x) => ({
+//   url: x[1],
+//   title: x[2],
+// }));
 
 // const yyyyMMdd = format(new Date(), "yyyy-MM-dd");
 // const yyyy = format(new Date(), "yyyy");
