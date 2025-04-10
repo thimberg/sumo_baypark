@@ -69,7 +69,7 @@ async function scrapeMansionData() {
           existingEntry.layout === newEntry.layout &&
           existingEntry.area === newEntry.area &&
           existingEntry.price === newEntry.price &&
-          existingEntry.floor === newEntry.floor,
+          existingEntry.orientation === newEntry.orientation,
       );
 
       if (!isDuplicate) {
