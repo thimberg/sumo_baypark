@@ -40,7 +40,7 @@ async function scrapeMansionData() {
       url: URL,
       details: data,
     };
-    
+
     // // Extract data
     // const title = doc.querySelector("h1")?.textContent.trim() || "N/A";
     // const price = getValueByLabel("価格");
