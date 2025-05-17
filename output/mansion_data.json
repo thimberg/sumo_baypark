@@ -98,6 +98,13 @@
         "price": "7640万円",
         "orientation": "北東",
         "fetchedAt": "2025-05-02T19:10:09.311Z"
+      },
+      {
+        "layout": "4LDK+S（納戸）",
+        "area": "100.69平米（壁芯）",
+        "price": "1億880万円",
+        "orientation": "南",
+        "fetchedAt": "2025-05-17T06:16:12.397Z"
       }
     ]
   },
