@@ -431,6 +431,13 @@
         "price": "18万円",
         "orientation": "東",
         "fetchedAt": "2025-09-01T06:20:53.933Z"
+      },
+      {
+        "layout": "2LDK",
+        "area": "59.77平米",
+        "price": "20.9万円",
+        "orientation": "東",
+        "fetchedAt": "2025-09-06T20:11:28.148Z"
       }
     ]
   }
