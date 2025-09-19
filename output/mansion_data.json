@@ -238,6 +238,27 @@
         "price": "9080万円",
         "orientation": "南",
         "fetchedAt": "2025-09-19T07:11:56.749Z"
+      },
+      {
+        "layout": "2LDK",
+        "area": "75.77平米（22.92坪）（壁芯）",
+        "price": "6980万円",
+        "orientation": "西",
+        "fetchedAt": "2025-09-19T20:13:20.728Z"
+      },
+      {
+        "layout": "3LDK",
+        "area": "75.71平米（22.90坪）（壁芯）",
+        "price": "7280万円",
+        "orientation": "東",
+        "fetchedAt": "2025-09-19T20:13:20.728Z"
+      },
+      {
+        "layout": "3LDK",
+        "area": "75.46平米（22.82坪）（壁芯）",
+        "price": "8180万円",
+        "orientation": "西",
+        "fetchedAt": "2025-09-19T20:13:20.728Z"
       }
     ]
   },
@@ -480,6 +501,20 @@
         "price": "30万円",
         "orientation": "南",
         "fetchedAt": "2025-09-16T07:12:32.127Z"
+      },
+      {
+        "layout": "2LDK",
+        "area": "76.73平米（23.21坪）（壁芯）",
+        "price": "7180万円",
+        "orientation": "東",
+        "fetchedAt": "2025-09-19T20:13:21.552Z"
+      },
+      {
+        "layout": "3LDK",
+        "area": "81.5平米（24.65坪）（壁芯）",
+        "price": "8180万円",
+        "orientation": "南",
+        "fetchedAt": "2025-09-19T20:13:21.553Z"
       }
     ]
   }
