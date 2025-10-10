@@ -557,6 +557,13 @@
         "price": "24万円",
         "orientation": "南西",
         "fetchedAt": "2025-10-09T11:10:45.190Z"
+      },
+      {
+        "layout": "2LDK",
+        "area": "71.44平米",
+        "price": "25万円",
+        "orientation": "西",
+        "fetchedAt": "2025-10-10T06:19:06.237Z"
       }
     ]
   }
