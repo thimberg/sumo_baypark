@@ -420,6 +420,13 @@
         "price": "8380万円",
         "orientation": "東",
         "fetchedAt": "2026-03-05T19:10:38.770Z"
+      },
+      {
+        "layout": "3LDK",
+        "area": "73.87平米（22.34坪）（壁芯）",
+        "price": "6680万円",
+        "orientation": "東",
+        "fetchedAt": "2026-03-15T06:01:10.764Z"
       }
     ]
   },
