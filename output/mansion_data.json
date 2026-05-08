@@ -546,6 +546,13 @@
         "price": "8180万円",
         "orientation": "西",
         "fetchedAt": "2026-05-02T10:51:17.991Z"
+      },
+      {
+        "layout": "4LDK",
+        "area": "104.3平米",
+        "price": "38万円",
+        "orientation": "西",
+        "fetchedAt": "2026-05-08T22:47:55.145Z"
       }
     ]
   },
