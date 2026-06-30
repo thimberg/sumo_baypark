@@ -1474,6 +1474,41 @@
         "price": "9880万円",
         "orientation": "南",
         "fetchedAt": "2026-06-26T23:56:59.234Z"
+      },
+      {
+        "layout": "2LDK",
+        "area": "70.44平米",
+        "price": "20万円",
+        "orientation": "東",
+        "fetchedAt": "2026-06-30T10:27:35.329Z"
+      },
+      {
+        "layout": "2LDK",
+        "area": "70.44平米",
+        "price": "20万円",
+        "orientation": "東",
+        "fetchedAt": "2026-06-30T10:27:35.330Z"
+      },
+      {
+        "layout": "2LDK",
+        "area": "70.44平米",
+        "price": "20万円",
+        "orientation": "東",
+        "fetchedAt": "2026-06-30T10:27:35.330Z"
+      },
+      {
+        "layout": "2LDK",
+        "area": "70.44平米",
+        "price": "20万円",
+        "orientation": "東",
+        "fetchedAt": "2026-06-30T10:27:35.330Z"
+      },
+      {
+        "layout": "2LDK",
+        "area": "70.44平米",
+        "price": "20万円",
+        "orientation": "東",
+        "fetchedAt": "2026-06-30T10:27:35.330Z"
       }
     ]
   }
