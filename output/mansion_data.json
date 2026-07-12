@@ -693,6 +693,13 @@
         "price": "7480万円",
         "orientation": "東",
         "fetchedAt": "2026-07-11T07:09:40.804Z"
+      },
+      {
+        "layout": "2LDK",
+        "area": "75.76平米（22.91坪）（壁芯）",
+        "price": "7970万円",
+        "orientation": "西",
+        "fetchedAt": "2026-07-12T17:52:54.205Z"
       }
     ]
   },
@@ -1572,6 +1579,13 @@
         "price": "5780万円",
         "orientation": "東",
         "fetchedAt": "2026-07-10T06:35:14.516Z"
+      },
+      {
+        "layout": "3LDK",
+        "area": "70.44平米（壁芯）",
+        "price": "6730万円",
+        "orientation": "東",
+        "fetchedAt": "2026-07-12T17:52:55.188Z"
       }
     ]
   }
