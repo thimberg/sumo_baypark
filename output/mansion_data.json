@@ -1656,6 +1656,13 @@
         "price": "9980万円",
         "orientation": "北西",
         "fetchedAt": "2026-08-02T10:26:33.055Z"
+      },
+      {
+        "layout": "3LDK",
+        "area": "75.56平米（壁芯）",
+        "price": "7180万円",
+        "orientation": "南",
+        "fetchedAt": "2026-08-07T06:05:07.314Z"
       }
     ]
   }
