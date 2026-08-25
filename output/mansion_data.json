@@ -812,6 +812,27 @@
         "price": "6490万円",
         "orientation": "東",
         "fetchedAt": "2026-08-21T06:31:19.380Z"
+      },
+      {
+        "layout": "3LDK",
+        "area": "85.98平米",
+        "price": "35万円",
+        "orientation": "南西",
+        "fetchedAt": "2026-08-25T06:31:29.492Z"
+      },
+      {
+        "layout": "3LDK",
+        "area": "85.98平米",
+        "price": "35万円",
+        "orientation": "南西",
+        "fetchedAt": "2026-08-25T06:31:29.493Z"
+      },
+      {
+        "layout": "3LDK",
+        "area": "85.98平米",
+        "price": "35万円",
+        "orientation": "南西",
+        "fetchedAt": "2026-08-25T06:31:29.493Z"
       }
     ]
   },
