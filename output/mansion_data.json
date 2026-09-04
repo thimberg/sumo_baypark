@@ -1852,6 +1852,13 @@
         "price": "7390万円",
         "orientation": "東",
         "fetchedAt": "2026-08-31T06:28:14.662Z"
+      },
+      {
+        "layout": "2LDK",
+        "area": "91.15平米（壁芯）",
+        "price": "9180万円",
+        "orientation": "南",
+        "fetchedAt": "2026-09-04T22:40:28.805Z"
       }
     ]
   }
